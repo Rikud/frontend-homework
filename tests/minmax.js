@@ -32,4 +32,12 @@ QUnit.module('Тестируем функцию minmax', function () {
 	QUnit.test('minmax игнорирует обычный текст', function (assert) {
 		assert.deepEqual(minmax('1, -5.8 или 10, хотя 34 + -5.3 и 73'), [-5.8, 73]);
 	});
+
+	//свои тесты
+
+	QUnit.test('minmax корректно интепретирует числа через запятую (без пробелов)', function (assert) {
+		assert.deepEqual(minmax('1,2,3,4,5'), [1, 5]);
+		assert.deepEqual(minmax('1,2,день,4,5'), [1, 5], 'Если одно из значений не является числом');
+	});
+
 });
