@@ -40,4 +40,9 @@ QUnit.module('Тестируем функцию minmax', function () {
 		assert.deepEqual(minmax('1,2,день,4,5'), [1, 5], 'Если одно из значений не является числом');
 	});
 
+	QUnit.test('minmax игнорирует не строки', function (assert) {
+		assert.deepEqual(minmax(1), [undefined, undefined]);
+		assert.deepEqual(minmax([1, 2, 3, 4, 5]), [undefined, undefined]);
+	});
+
 });
