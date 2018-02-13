@@ -11,7 +11,7 @@ const parser = (input) => {
 	if (typeof input !== 'string')
 		return [];
 	let arr = input.split(/,|\s/);
-	arr = arr.filter(function(number) {
+	arr = arr.filter( (number)  => {
 		if (number === '')
 			return false;
 		return !isNaN(number);
